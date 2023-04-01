@@ -1,0 +1,19 @@
+syntax="proto3";
+option java_package="ma.enset.stubs";
+service ChatService {
+  rpc diffuseMessage(Message) returns (Message);
+  rpc diffuseMessageBid(stream Message) returns (stream Message);
+  rpc envoiyerTo(stream MessageTo) returns(stream MessageTo);
+  rpc connecter(Nom) returns(Message);
+  rpc connecteBid(stream MessageTo) returns(stream MessageTo);
+}
+message Message{
+  string msg=1;
+}
+message MessageTo{
+  string to=1;
+  string msg=2;
+}
+message Nom{
+  string nom=1;
+}
